@@ -24,3 +24,22 @@ console.log(typeof num2);
 console.log(typeof num3);
 console.log(typeof sym);
 console.log(typeof big);
+
+//challenge
+let notNumber = "hello" * 10;
+console.log(notNumber); // NaN
+console.log(typeof notNumber); // number
+
+//type coercion
+console.log("5" + 5);
+console.log("5" - 5);
+
+console.log(true + 5);
+console.log(false + 1);
+console.log(true - 5);
+
+console.log("five" + true);
+console.log("five" - false);
+
+console.log(null + 1);
+console.log(undefined + 1);
