@@ -9,32 +9,68 @@
       html {
         scroll-behavior: smooth;
       }
+      /* Dark mode styles */
+      html.dark {
+        background-color: #1a202c; /* A dark background */
+        color: #e2e8f0; /* Light text */
+      }
 
-      body {
-        background-color: #f0f4ff;
-        color: #1f2937;
+      html.dark .text-black\/60 {
+        color: #a0aec0; /* Lighter grey for faded text */
+      }
+
+      html.dark .border-gray-300 {
+        border-color: #4a5568; /* Darker border */
+      }
+
+      html.dark .bg-white {
+        background-color: #2d3748; /* Darker background for nav/cards */
+      }
+
+      html.dark .text-gray-500 {
+        color: #a0aec0; /* Lighter grey for subtle text */
+      }
+
+      html.dark .text-gray-600 {
+        color: #cbd5e0; /* Even lighter grey */
+      }
+
+      html.dark .text-gray-700 {
+        color: #e2e8f0; /* Lightest grey for icons */
+      }
+
+      html.dark .bg-gray-200 {
+        background-color: #4a5568; /* Darker background for source button */
+        color: #e2e8f0; /* Light text for source button */
+      }
+
+      html.dark .hover\:bg-gray-100:hover {
+        background-color: #4a5568; /* Darker hover state for nav icons */
+      }
+
+      html.dark .from-white {
+        background-image: linear-gradient(to top, #1a202c, rgba(26, 32, 44, 0));
       }
     </style>
   </head>
   <body>
     <div class="max-w-[700px] mx-auto py-20 flex gap-10 flex-col">
-      <header class="flex flex-col md:flex-row items-center gap-6">
+      <header class="flex">
         <div>
-          <h1 class="text-6xl font-bold text-blue-700">Hi, I'm Raman 👋</h1>
-          <p class="text-xl text-gray-700 mt-2">
+          <h1 class="text-6xl font-bold">Hi, I'm Raman 👋</h1>
+          <p class="text-xl">
             Web Dev associate at Gritfeat Solutions passionate about continuous
             learning and building real-world applications.
           </p>
         </div>
         <div
-          class="basis-[200px] rounded-full border-4 border-pink-300 overflow-hidden"
+          class="basis-[200px] rounded-full border-4 border-blue-200 overflow-hidden"
         >
           <img src="./images/me.png" alt="profile image" />
         </div>
       </header>
-
       <section id="about">
-        <h1 class="text-lg font-bold text-pink-600">About</h1>
+        <h1 class="text-lg font-bold">About</h1>
         <p class="text-black/60 text-justify">
           I am currently a 7th-semester student at Nagarjuna College of IT,
           pursuing my Bachelor's degree in Information Management. Alongside my
@@ -43,13 +79,12 @@
           applications and continuously improving my skills.
         </p>
       </section>
-
       <section id="education">
-        <h2 class="text-lg font-bold mb-4 text-blue-600">Education</h2>
+        <h2 class="text-lg font-bold mb-4">Education</h2>
 
         <div class="space-y-3">
-          <div class="p-4 border border-pink-200 rounded bg-white">
-            <div class="flex justify-between text-sm font-medium text-pink-700">
+          <div class="p-4 border border-gray-300 rounded">
+            <div class="flex justify-between text-sm font-medium">
               <span>Bal Deeksha Sadan H.S. School</span>
               <span class="text-gray-500">2005 - 2018</span>
             </div>
@@ -58,8 +93,8 @@
             </div>
           </div>
 
-          <div class="p-4 border border-pink-200 rounded bg-white">
-            <div class="flex justify-between text-sm font-medium text-pink-700">
+          <div class="p-4 border border-gray-300 rounded">
+            <div class="flex justify-between text-sm font-medium">
               <span>United Academy</span>
               <span class="text-gray-500">2018 - 2021</span>
             </div>
@@ -68,8 +103,8 @@
             </div>
           </div>
 
-          <div class="p-4 border border-pink-200 rounded bg-white">
-            <div class="flex justify-between text-sm font-medium text-pink-700">
+          <div class="p-4 border border-gray-300 rounded">
+            <div class="flex justify-between text-sm font-medium">
               <span>Nagarjuna College of IT</span>
               <span class="text-gray-500">2021 - Present</span>
             </div>
@@ -79,70 +114,45 @@
           </div>
         </div>
       </section>
-
       <section id="skills">
-        <h2 class="text-lg font-bold mb-4 text-blue-600">Skills</h2>
+        <h2 class="text-lg font-bold mb-4">Skills</h2>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-white">
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             HTML
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             CSS
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             Tailwind CSS
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             JavaScript
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             React
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             Git & GitHub
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             Figma
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             Node.js
           </div>
-          <div
-            class="p-2 border rounded border-pink-300 text-center bg-gradient-to-r from-blue-500 to-pink-500"
-          >
+          <div class="p-2 border rounded border-gray-300 text-center bg-black">
             Express.js
           </div>
         </div>
       </section>
-
       <section id="projects">
-        <h2 class="text-lg font-bold mb-4 text-pink-600">Projects</h2>
+        <h2 class="text-lg font-bold mb-4">Projects</h2>
 
         <div class="space-y-3">
-          <!-- Project Cards -->
-          <!-- Repeat for each project -->
-          <!-- Twitter Clone -->
-          <div class="p-4 border border-blue-200 rounded bg-white">
-            <h3 class="font-semibold text-base text-blue-700">
-              Twitter‑Clone (MERN)
-            </h3>
+          <div class="p-4 border border-gray-300 rounded">
+            <h3 class="font-semibold text-base">Twitter‑Clone (MERN)</h3>
             <p class="text-sm text-gray-600 mt-1">
               A full‑stack Twitter clone with JWT authentication, image uploads,
               and a public feed.
@@ -151,23 +161,20 @@
               <a
                 href="https://twitter-clone-ka5w.onrender.com"
                 target="_blank"
-                class="px-3 py-1 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded text-sm"
+                class="px-3 py-1 bg-black text-white rounded text-sm"
                 >Live Demo</a
               >
               <a
                 href="https://github.com/Raman-X/twitter-clone.git"
                 target="_blank"
-                class="px-3 py-1 bg-pink-100 text-pink-700 rounded text-sm"
+                class="px-3 py-1 bg-gray-200 text-gray-800 rounded text-sm"
                 >Source</a
               >
             </div>
           </div>
 
-          <!-- Python Chat App -->
-          <div class="p-4 border border-blue-200 rounded bg-white">
-            <h3 class="font-semibold text-base text-blue-700">
-              Python Chat App
-            </h3>
+          <div class="p-4 border border-gray-300 rounded">
+            <h3 class="font-semibold text-base">Python Chat App</h3>
             <p class="text-sm text-gray-600 mt-1">
               Real‑time chat app using Flask & Socket.IO, deployed with
               Gunicorn.
@@ -176,23 +183,20 @@
               <a
                 href="https://python-chat-app-hroo.onrender.com"
                 target="_blank"
-                class="px-3 py-1 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded text-sm"
+                class="px-3 py-1 bg-black text-white rounded text-sm"
                 >Live Demo</a
               >
               <a
                 href="https://github.com/Raman-X/python-chat-app.git"
                 target="_blank"
-                class="px-3 py-1 bg-pink-100 text-pink-700 rounded text-sm"
+                class="px-3 py-1 bg-gray-200 text-gray-800 rounded text-sm"
                 >Source</a
               >
             </div>
           </div>
 
-          <!-- Word Game -->
-          <div class="p-4 border border-blue-200 rounded bg-white">
-            <h3 class="font-semibold text-base text-blue-700">
-              Word‑Game (Wordle Clone)
-            </h3>
+          <div class="p-4 border border-gray-300 rounded">
+            <h3 class="font-semibold text-base">Word‑Game (Wordle Clone)</h3>
             <p class="text-sm text-gray-600 mt-1">
               Word‑guessing game built with React, custom word lists included.
             </p>
@@ -200,21 +204,20 @@
               <a
                 href="https://word-game-77mn.onrender.com"
                 target="_blank"
-                class="px-3 py-1 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded text-sm"
+                class="px-3 py-1 bg-black text-white rounded text-sm"
                 >Live Demo</a
               >
               <a
                 href="https://github.com/Raman-X/word-game.git"
                 target="_blank"
-                class="px-3 py-1 bg-pink-100 text-pink-700 rounded text-sm"
+                class="px-3 py-1 bg-gray-200 text-gray-800 rounded text-sm"
                 >Source</a
               >
             </div>
           </div>
 
-          <!-- WorldAPI -->
-          <div class="p-4 border border-blue-200 rounded bg-white">
-            <h3 class="font-semibold text-base text-blue-700">WorldAPI</h3>
+          <div class="p-4 border border-gray-300 rounded">
+            <h3 class="font-semibold text-base">WorldAPI</h3>
             <p class="text-sm text-gray-600 mt-1">
               React app showing country info using a public REST API.
             </p>
@@ -222,26 +225,23 @@
               <a
                 href="https://rest-api-countries-app.netlify.app/"
                 target="_blank"
-                class="px-3 py-1 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded text-sm"
+                class="px-3 py-1 bg-black text-white rounded text-sm"
                 >Live Demo</a
               >
               <a
                 href="https://github.com/Raman-X/countriesAPI.git"
                 target="_blank"
-                class="px-3 py-1 bg-pink-100 text-pink-700 rounded text-sm"
+                class="px-3 py-1 bg-gray-200 text-gray-800 rounded text-sm"
                 >Source</a
               >
             </div>
           </div>
         </div>
       </section>
-
       <section id="contact" class="w-full py-12 px-4 md:px-6 text-center">
-        <h2 class="text-5xl font-bold tracking-tight mb-4 text-pink-600">
-          Get in Touch
-        </h2>
+        <h2 class="text-5xl font-bold tracking-tight mb-4">Get in Touch</h2>
         <p
-          class="text-gray-700 text-base max-w-xl mx-auto text-xl leading-relaxed"
+          class="text-gray-500 text-base max-w-xl mx-auto text-xl leading-relaxed"
         >
           If you'd like to connect, feel free to reach out through the navbar
           links — or send me a message on
@@ -254,26 +254,24 @@
         </p>
       </section>
     </div>
-
-    <!-- Bottom fade -->
+    <!-- a subtle fade on the bottom of the page -->
     <div
       class="fixed bottom-0 left-0 w-full h-40 pointer-events-none bg-gradient-to-t from-white to-transparent"
     ></div>
 
-    <!-- Bottom Navbar -->
     <nav class="fixed bottom-4 inset-x-0 z-50 flex justify-center">
       <div
-        class="flex bg-gradient-to-r from-pink-100 to-blue-100 rounded-full border border-gray-300 shadow-lg px-3 py-2 space-x-4 max-w-md"
+        class="flex bg-white rounded-full border border-gray-300 shadow-lg px-3 py-2 space-x-4 max-w-md"
       >
         <!-- Home -->
         <a
           href="#"
           aria-label="Home"
-          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-200 transition"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 text-blue-700"
+            class="w-6 h-6 text-gray-700"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
@@ -292,12 +290,12 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-200 transition"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
         >
           <svg
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-6 h-6 text-blue-700"
+            class="w-6 h-6 text-gray-700"
           >
             <path
               fill-rule="evenodd"
@@ -313,11 +311,11 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-200 transition"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 text-blue-700"
+            class="w-6 h-6 text-gray-700"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -332,11 +330,11 @@
           href="https://mail.google.com/mail/?view=cm&fs=1&to=ramanmaharzan123@gmail.com"
           target="_blank"
           aria-label="Email"
-          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-200 transition"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 text-blue-700"
+            class="w-6 h-6 text-gray-700"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
@@ -348,7 +346,94 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
         </a>
+
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          aria-label="Toggle theme"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="light-icon"
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+            style="display: none"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="dark-icon"
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const lightIcon = document.getElementById("light-icon");
+      const darkIcon = document.getElementById("dark-icon");
+      const htmlElement = document.documentElement;
+
+      // Check for saved theme in localStorage or default to system preference
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      function applyTheme(theme) {
+        if (theme === "dark") {
+          htmlElement.classList.add("dark");
+          lightIcon.style.display = "block";
+          darkIcon.style.display = "none";
+        } else {
+          htmlElement.classList.remove("dark");
+          lightIcon.style.display = "none";
+          darkIcon.style.display = "block";
+        }
+      }
+
+      // Initial theme application
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else if (prefersDark) {
+        applyTheme("dark");
+      } else {
+        applyTheme("light");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        if (htmlElement.classList.contains("dark")) {
+          applyTheme("light");
+          localStorage.setItem("theme", "light");
+        } else {
+          applyTheme("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
   </body>
 </html>
