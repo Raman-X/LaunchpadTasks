@@ -315,3 +315,24 @@ const dog2 = new Dog("Charlie", "Beagle");
 dog2.eat(); // Charlie is eating.
 dog2.bark(); // Charlie says: Woof!
 ```
+
+## Question 12: Content Feed UI like Twitter
+
+**Screenshot:**
+
+![Screenshot](./images/tweetpage1.png)
+![Screenshot](./images/tweetpage2.png)
+
+## Question 13: Counter implemented
+
+**added:**
+
+```javascript
+// Bind event listeners
+this.incrementBtn.addEventListener("click", () => this.increment());
+this.decrementBtn.addEventListener("click", () => this.decrement());
+```
+
+**Screenshot:**
+
+![Screenshot](./images/counter.png)
