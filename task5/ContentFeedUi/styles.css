@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+#app {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.username {
+  color: #0077cc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment {
+  background: #f0f0f0;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.profile {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.todo {
+  margin: 5px 0;
+}
