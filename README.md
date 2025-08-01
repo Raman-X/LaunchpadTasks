@@ -21,3 +21,7 @@ DOM MANIPULATION TASKS
 ## Task 5
 
 MORE JS TASKS
+
+## Task 6
+
+Todo List App with Tailwind CSS and JavaScript
