@@ -25,3 +25,7 @@ MORE JS TASKS
 ## Task 6
 
 Todo List App with Tailwind CSS and JavaScript
+
+## Task 7
+
+Task 5 tasks converted to TypeScript
