@@ -29,3 +29,7 @@ Todo List App with Tailwind CSS and JavaScript
 ## Task 7
 
 Task 5 tasks converted to TypeScript
+
+## Task 8
+
+DSA Tasks 1<sup>st</sup> assignment
