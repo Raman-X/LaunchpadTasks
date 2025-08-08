@@ -33,3 +33,7 @@ Task 5 tasks converted to TypeScript
 ## Task 8
 
 DSA Tasks 1<sup>st</sup> assignment
+
+## Task 9
+
+DSA Tasks 2<sup>nd</sup> assignment
