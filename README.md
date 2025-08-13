@@ -37,3 +37,7 @@ DSA Tasks 1<sup>st</sup> assignment
 ## Task 9
 
 DSA Tasks 2<sup>nd</sup> assignment
+
+## Task 10
+
+Design Patterns in TypeScript
