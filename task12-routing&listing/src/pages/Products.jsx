@@ -14,12 +14,13 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+    <div className="min-h-screen bg-base-200">
       <Navbar />
 
       <div className="flex flex-col items-center px-4 py-12">
         <div className="w-full max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-8 text-center">
+          {/* Page Title */}
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-8 text-center">
             Products
           </h2>
 
@@ -28,16 +29,17 @@ const Products = () => {
               {products.map((product) => (
                 <Card
                   key={product.id}
-                  title={product.title} // fakestoreapi uses "title" not "name"
+                  title={product.title}
                   description={product.description}
                   image={product.image}
                   alt={product.title}
+                  id={product.id}
                 />
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center gap-6 p-12 bg-white rounded-2xl shadow-xl">
-              <p className="text-xl md:text-2xl text-gray-700">
+            <div className="flex flex-col items-center gap-6 p-12 bg-base-100 rounded-3xl shadow-xl">
+              <p className="text-xl md:text-2xl text-base-content">
                 No products found. Please try again later.
               </p>
             </div>

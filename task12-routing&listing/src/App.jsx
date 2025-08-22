@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
+import Product from "./pages/Product";
 import Products from "./pages/Products";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<Product />} />
       </Routes>
     </>
   );
