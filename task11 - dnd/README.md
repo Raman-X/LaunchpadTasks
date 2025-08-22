@@ -13,11 +13,11 @@ This project is a simple React application demonstrating **drag and drop functio
 ## Installation & Running the Project
 
 ```bash
-# Clone the repository
-git clone https://github.com/<your-username>/react-drag-drop-assignment.git
+# Clone the whole repo
+git clone https://github.com/Raman-X/LaunchpadTasks.git
 
-# Go inside project folder
-cd react-drag-drop-assignment
+# Go inside the project folder
+cd LaunchpadTasks/task11-dnd
 
 # Install dependencies
 npm install
@@ -26,4 +26,5 @@ npm install
 npm run dev   # (if Vite)
 # or
 npm start     # (if CRA)
+
 ```
