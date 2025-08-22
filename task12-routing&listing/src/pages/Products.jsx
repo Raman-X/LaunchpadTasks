@@ -59,7 +59,7 @@ const Products = () => {
           ) : (
             <div className="flex flex-col items-center gap-6 p-12 bg-base-100 rounded-3xl shadow-xl">
               <p className="text-xl md:text-2xl text-base-content">
-                Loading..... Please Wait
+                No products found
               </p>
             </div>
           )}
