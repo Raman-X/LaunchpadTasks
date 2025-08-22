@@ -41,3 +41,7 @@ DSA Tasks 2<sup>nd</sup> assignment
 ## Task 10
 
 Design Patterns in TypeScript
+
+## Task 11
+
+React Drag and Drop Assignment

@@ -28,3 +28,9 @@ npm run dev   # (if Vite)
 npm start     # (if CRA)
 
 ```
+
+## Screenshots
+
+![Screenshot 1](public/Screenshot1.png)
+![Screenshot 2](public/Screenshot2.png)
+![Screenshot 3](public/Screenshot3.png)
