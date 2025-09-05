@@ -1,7 +1,5 @@
 # MongoDB Assignment
 
-## Find Queries
-
 ### 1. Calculate Total Stock Value by Category.
 
 ```js
@@ -320,3 +318,96 @@ db.orders.aggregate([
 ```
 
 ![Alt Text](images/Screenshot10.png)
+
+## Question 2
+
+### Create documentation on Map-Reduce and the Input-Output model in MongoDB.
+
+### MongoDB Map-Reduce:
+
+- Map-Reduce is a data processing paradigm for aggregating large datasets in a distributed way. While MongoDB's Aggregation Pipeline is often preferred for its performance and flexibility, Map-Reduce handles complex, multi-stage aggregations that don't fit the pipeline's structure.
+
+1. The Map-Reduce Flow
+
+2. Input Collection: Documents from a specified collection are processed.
+
+3. Map Function: Each input document is transformed into one or more (key, value) pairs.
+
+4. Grouping: MongoDB groups all (key, value) pairs with the same key.
+
+5. Reduce Function: For each unique key, the reduce function combines the array of values into a single aggregate value. This function must be idempotent and associative.
+
+6. Finalize Function (Optional): Applies final transformations to the reducedValue for each key before output.
+
+7. Output Collection: The final (key, value) pairs are stored in an output collection.
+
+8. The Functions
+
+#### map() Function
+
+- Purpose: Processes each input document and emit(key, value) pairs.
+
+- Context: this refers to the current document.
+
+#### reduce() Function
+
+- Purpose: Aggregates an array of values for a given key into a single result.
+
+- Signature: function(key, values)
+
+- Requirement: Must be idempotent and associative (result should be the same regardless of how values are grouped for reduction).
+
+#### finalize() Function (Optional)
+
+- Purpose: Performs a final transformation on the reducedValue before output.
+
+- Signature: function(key, reducedValue)
+
+### Input Model
+
+- Map-Reduce takes documents from a single collection.
+
+- Optional parameters (query, sort, limit) can filter and order the input documents.
+
+### Output Model (out parameter)
+
+> The out parameter in db.collection.mapReduce() defines how results are stored. Output documents always have the format {"\_id": "key", "value": "finalResult"}.
+
+- out: "collectionName" (or { replace: "collectionName" })
+
+  - Creates a new collection or overwrites an existing one.
+
+- out: { merge: "collectionName" }
+
+  - Inserts new documents. If an \_id matches, the existing document is replaced.
+
+- out: { reduce: "collectionName" }
+
+  - Inserts new documents. If an \_id matches, the reduce function (or a specified custom one) is used to merge the new and existing values.
+
+- out: { inline: 1 }
+
+  - Returns the results directly to the shell/application. Limited by the 16MB BSON document size. Useful for small datasets or testing.
+
+- out: { db: "databaseName", ... }
+  - Specifies a different database for the output collection.
+
+## When to Use (and Not Use)
+
+- Use Map-Reduce when:
+
+  - Your aggregation logic is highly complex and doesn't fit the aggregation pipeline.
+
+  - You need to process very large datasets across multiple shards.
+
+  - You need to combine values over iterative reductions.
+
+- Prefer the Aggregation Pipeline when:
+
+  - Performance is critical.
+
+  - Your aggregation can be expressed using pipeline stages ($group, $match, $project, etc.).
+
+  - You need real-time or near real-time results.
+
+  - For most common aggregation tasks.
