@@ -61,3 +61,11 @@ Todo List App in Node and Typescript
 ## Task 15
 
 Blogs api with express and typescript
+
+## Task 16
+
+Mongo db assignment 1
+
+## Task 17
+
+Mongo db assignment 2
