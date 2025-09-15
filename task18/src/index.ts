@@ -1,5 +1,7 @@
 import express from "express";
-import "./config/env";
+import "./config/env"; // import environment variables put this above other imports
+
+import userRoutes from "./routes/userRoutes";
 
 import { connectDB } from "./config/db";
 
@@ -8,6 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 connectDB();
+
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
