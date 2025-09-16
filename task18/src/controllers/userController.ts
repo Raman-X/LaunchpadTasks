@@ -35,14 +35,16 @@ export const createUser = async (req: Request, res: Response) => {
 // search users
 export const searchUsers = async (req: Request, res: Response) => {
   try {
-    const {
+    let {
       country,
       interest,
+      minFollowers,
       profileTheme,
       subscriptionTier,
       page = "1",
       limit = "10",
     } = req.query;
+    const minFollowersNumber = minFollowers ? Number(minFollowers) : 0;
 
     const filters: any = {};
 
@@ -50,6 +52,8 @@ export const searchUsers = async (req: Request, res: Response) => {
     if (country) filters.country = country;
     if (profileTheme) filters.theme = profileTheme;
     if (subscriptionTier) filters.tier = subscriptionTier;
+    if (minFollowers && minFollowersNumber > 1000)
+      filters.minFollowers = minFollowers;
     if (interest) filters.interests = { $in: [interest] };
 
     // Pagination
