@@ -117,3 +117,53 @@ export const deleteProduct = async (req: Request, res: Response) => {
     return res.status(500).json({ message: error.message });
   }
 };
+export const updateProductReview = async (req: Request, res: Response) => {
+  try {
+    const { productId, reviewId } = req.params;
+    const { rating, comment } = req.body;
+
+    const product = await Product.findOneAndUpdate(
+      {
+        _id: productId,
+        "reviews._id": reviewId,
+      },
+      {
+        $set: {
+          "reviews.$.rating": rating,
+          "reviews.$.comment": comment,
+        },
+      },
+      { new: true }
+    );
+
+    if (!product) {
+      return res.status(404).json({ error: "Product or review not found" });
+    }
+
+    res.status(200).json({ message: "Review updated", product });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to update product review" });
+  }
+};
+
+export const deleteProductReview = async (req: Request, res: Response) => {
+  try {
+    const { productId, reviewId } = req.params;
+
+    const product = await Product.findByIdAndUpdate(
+      productId,
+      {
+        $pull: { reviews: { _id: reviewId } },
+      },
+      { new: true }
+    );
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    res.status(200).json({ message: "Review deleted", product });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to delete product review" });
+  }
+};
