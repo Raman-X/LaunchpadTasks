@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import connectDB from "./config/database";
 import { PORT } from "./config/env";
+import router from "./routes";
 
 (() => {
   const app = express();
@@ -9,6 +10,8 @@ import { PORT } from "./config/env";
   app.use(express.urlencoded({ extended: true }));
 
   connectDB();
+
+  app.use("/api", router);
 
   app.get("/", (req: Request, res: Response) => {
     res.send("Testing routes");
