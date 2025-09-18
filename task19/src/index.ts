@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
-import connectDB from "./config/database";
 import { PORT } from "./config/env";
+
+import connectDB from "./config/database";
 import router from "./routes";
 
 (() => {
