@@ -2,10 +2,10 @@ import express from "express";
 import postsController from "./controller";
 const router = express.Router();
 
-router.post("/", postsController.createPost);
-router.get("/", postsController.getAllPosts);
-router.get("/:postId", postsController.getPostById);
-router.patch("/:postId", postsController.updatePost);
-router.delete("/:postId", postsController.deletePost);
+router.post("/", postsController.create);
+router.get("/", postsController.getAll);
+router.get("/:postId", postsController.getById);
+router.patch("/:postId", postsController.update);
+router.delete("/:postId", postsController.delete);
 
 export default router;
