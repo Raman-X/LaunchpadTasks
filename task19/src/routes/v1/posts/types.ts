@@ -1,10 +1,12 @@
 export interface IPost {
-  id: number;
+  _id: string;
   title: string;
   body: string;
   author: string;
   createdBy: string;
   updatedBy?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface IPostPayload {

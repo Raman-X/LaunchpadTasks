@@ -1,45 +1,48 @@
+import Post from "../../../models/posts";
 import { IPost, IPostPayload } from "./types";
 
-let POSTS: Array<IPost> = [];
+function convertPostIdsToStrings(post: any): IPost {
+  if (!post) return post;
+
+  return {
+    ...post,
+    _id: post._id.toString(),
+    author: post.author.toString(),
+    createdBy: post.createdBy.toString(),
+    updatedBy: post.updatedBy ? post.updatedBy.toString() : undefined,
+  };
+}
 
 const PostRepository = {
-  getNextId(): number {
-    return POSTS.length + 1;
+  async create(payload: IPostPayload): Promise<IPost> {
+    const post = await Post.create(payload);
+    return convertPostIdsToStrings(post.toObject());
   },
 
-  create(payload: IPostPayload): IPost {
-    const data: IPost = {
-      ...payload,
-      id: this.getNextId(),
-    };
-    POSTS.push(data);
-    return data;
+  async getAll(): Promise<IPost[]> {
+    const posts = await Post.find().lean();
+    return posts.map(convertPostIdsToStrings);
   },
 
-  getAll(): IPost[] {
-    return POSTS;
+  async getById(id: string): Promise<IPost | null> {
+    const post = await Post.findById(id).lean();
+    return post ? convertPostIdsToStrings(post) : null;
   },
 
-  getById(id: number): IPost | undefined {
-    return POSTS.find((post) => post.id === id);
+  async deleteById(id: string): Promise<boolean> {
+    const result = await Post.findByIdAndDelete(id);
+    return !!result;
   },
 
-  deleteById(id: number): boolean | undefined {
-    const post = this.getById(id);
-    if (!post) return undefined;
-    POSTS = POSTS.filter((post) => post.id !== id);
-    return true;
-  },
+  async updateById(
+    id: string,
+    payload: Partial<IPostPayload>
+  ): Promise<IPost | null> {
+    const updated = await Post.findByIdAndUpdate(id, payload, {
+      new: true,
+    }).lean();
 
-  updateById(id: number, payload: Partial<IPostPayload>): IPost | undefined {
-    const post = this.getById(id);
-    if (!post) return undefined;
-    const newPost: IPost = {
-      ...post,
-      ...payload,
-    };
-    POSTS = POSTS.map((p) => (p.id === id ? newPost : p));
-    return newPost;
+    return updated ? convertPostIdsToStrings(updated) : null;
   },
 };
 
